@@ -4,14 +4,21 @@ using UnityEngine;
 
 public class DestroyOutOfBounds : MonoBehaviour
 {
-    private float range = 400;
+    // Límite de destrucción del proyectil
+    private float range = 400f;
 
+    // Ejecuta a cada frame
     void Update()
     {
-        if (transform.position.x > range || transform.position.x < -range
-            || transform.position.y > range || transform.position.z < -range
-            || transform.position.z > range || transform.position.z < -range)
+        // Si la posición en X, Y o Z supera el límite
+        if (transform.position.x > range 
+            || transform.position.x < -range
+            || transform.position.y > range 
+            || transform.position.z < -range
+            || transform.position.z > range 
+            || transform.position.z < -range)
         {
+            // Destruye el proyectil
             Destroy(gameObject);
         }
     }

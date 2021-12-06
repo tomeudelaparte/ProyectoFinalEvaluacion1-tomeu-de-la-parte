@@ -4,18 +4,13 @@ using UnityEngine;
 
 public class RotateObject : MonoBehaviour
 {
-    public bool isVertical = false;
+    // Velocidad de rotación
     public float speed = 2000f;
 
+    // Ejecuta a cada frame
     void Update()
     {
-        if (!isVertical)
-        {
-            transform.Rotate(Vector3.up * speed * Time.deltaTime);
-        }
-        else
-        {
-            transform.rotation *= Quaternion.Euler(0, speed * Time.deltaTime, 0);
-        }
+        // Rota el GameObject en Y según la velocidad determinada
+        transform.rotation *= Quaternion.Euler(0, speed * Time.deltaTime, 0);
     }
 }
